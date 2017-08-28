@@ -65,14 +65,30 @@ $("body").on("click", ".topics", function(e) {
 		    	var rating = results[i].rating;
             	var p = $("<p>").text("Rating: " + rating);
             	var personImage = $("<img>");
-            	personImage.attr("src", results[i].images.fixed_width.url);
+            	personImage.attr("src", results[i].images.fixed_width_still.url);
+            	personImage.attr("data-state", "still");
+            	personImage.attr("data-still", results[i].images.fixed_width_still.url);
+            	personImage.attr("data-animate", results[i].images.fixed_width.url);
+            	personImage.attr("id", "gif");
             	gifCol.prepend(p);
             	gifCol.prepend(personImage);
             	gifDiv.append(gifCol);
             	$("#gifs-appear-here").prepend(gifDiv);
          	};
-
-    });
-
+    	});
     }
 });
+
+$("body").on("click", "#gif", function() {
+    // Make a variable named state and then store the image's data-state into it.
+    var state = $(this).attr("data-state");
+    if(state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+        }else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+    }
+});
+
+// To add, click on the image to open in a modal window, filter by rating

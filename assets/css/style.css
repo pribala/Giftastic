@@ -42,3 +42,9 @@ html, body {
 #topics-input {
 	background-color: #E6E6FA;
 }
+
+.container {
+	font-size: 10px;
+	color: white;
+	padding: 10px;
+}
