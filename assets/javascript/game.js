@@ -7,7 +7,7 @@ $("document").ready(function(){
 
 // Function for displaying categories data
 function renderButtons() {
-    $("#categories").empty();
+    $(".nav").empty();
     // Create the buttons for the categories
     topics.forEach(function(str) {
     	var buttonText = capitalizeStr(str);
