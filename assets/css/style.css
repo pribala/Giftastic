@@ -1,0 +1,32 @@
+.jumbotron {
+	background-color: #EFD01B;
+}
+
+.navbar {
+	background-color: #262163;
+	border: 3px solid #FAE3C4;
+	font-size: 35px;
+	color: white;
+	padding: 15px;
+	/*margin-bottom: 0px;*/
+}
+
+.col-4 {
+	border: 2px solid #262163;
+	background-color: #FAE3C4;
+}
+
+.topics {
+	margin: 10px 0px 10px 0px;
+	background-color: #262163;
+	color: white;
+}
+
+.heading {
+	margin: 10px 0px 10px 0px;
+}
+
+.sidebar {
+	margin-top: 20px;
+}
+
