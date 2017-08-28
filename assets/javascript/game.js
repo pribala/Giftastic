@@ -21,8 +21,15 @@ function renderButtons() {
 	});
 }    
 
+// Function to capitalize the first letter of each category
 function capitalizeStr(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+	var strArray = str.split(" ");
+	var newStr = "";
+	strArray.forEach(function(item) {
+		newStr += item.charAt(0).toUpperCase() + item.slice(1)+ " ";
+	});
+	return newStr;
+    //return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 // This function handles events where one button is clicked
