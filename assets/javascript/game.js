@@ -1,11 +1,11 @@
+// Array of categories 
 var topics = ["sylvester stallone", "taylor swift", "elvis presley", "beatles"];
 
 $("document").ready(function(){
 	renderButtons();
-
 });
 
-// Function for displaying categories data
+// Function creates buttons for each category in the array
 function renderButtons() {
     $(".nav").empty();
     $(".nav").append('<li class="heading"><h5>Famous People</h5></li>');
@@ -33,7 +33,7 @@ function capitalizeStr(str) {
 	return newStr;
 }
 
-// This function handles events where one button is clicked
+// Function handles adding a new category entered by the user
 $("#add-topic").on("click", function(event) {
     event.preventDefault();
     // Add a new topic when button is clicked
@@ -45,6 +45,8 @@ $("#add-topic").on("click", function(event) {
     }
 });
 
+// Builds the query url for giphy api for the ajax call, queries giphy's random 
+// api endpoint and writes the resulting data to the document
 $("body").on("click", ".topics", function(e) {
 	if(e.target.id === "person"){
 		$("#gifs-appear-here").empty();
@@ -56,14 +58,14 @@ $("body").on("click", ".topics", function(e) {
            url: queryURL,
            method: "GET"
         }).done(function(response) {
-           console.log(response);
            var results = response.data;
+           console.log(results);
            var gifDiv = $("<div class='row'>");
 	       for (var i = 0; i < results.length; i++) {
       	   		var gifCol = $("<div>");
-      	   		gifCol.addClass("col-4 gifBar");
+      	   		gifCol.addClass("col-4 col-sm gifBar");
 		    	var rating = results[i].rating;
-            	var p = $("<p>").text("Rating: " + rating);
+            	var p = $("<p>").text("Rating: " + rating.toUpperCase());
             	var personImage = $("<img>");
             	personImage.attr("src", results[i].images.fixed_width_still.url);
             	personImage.attr("data-state", "still");
@@ -79,6 +81,7 @@ $("body").on("click", ".topics", function(e) {
     }
 });
 
+// Toggles the gif from still to animated
 $("body").on("click", "#gif", function() {
     // Make a variable named state and then store the image's data-state into it.
     var state = $(this).attr("data-state");
@@ -90,5 +93,3 @@ $("body").on("click", "#gif", function() {
           $(this).attr("data-state", "still");
     }
 });
-
-// To add, click on the image to open in a modal window, filter by rating

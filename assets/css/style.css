@@ -1,10 +1,14 @@
 html, body {
 	height: 100%;
+	background-color: #E6E6FA;
+	color: #652D92;
+	font-weight: bold;
 }
 
 .container-fluid {
-	background-color: #E6E6FA;
 	height: 100%;
+	overflow: scroll;
+	margin-bottom: 50px;
 }
 
 .navbar {
@@ -13,12 +17,12 @@ html, body {
 	font-size: 35px;
 	color: #652D92;
 	padding: 15px;
-	/*margin-bottom: 0px;*/
 }
 
 .sidebar {
 	border: 1px solid #957BBE;
 	background-color: #99C76C;
+	padding-bottom: 15px;
 }
 
 .topics {
@@ -32,15 +36,16 @@ html, body {
 .heading {
 	margin: 10px 0px 10px 0px;
 	color: #652D92;
-
 }
 
 .content {
 	padding-top: 20px;
 }
 
-#topics-input {
+.userInput {
 	background-color: #E6E6FA;
+	color: #652D92;
+	margin-bottom: 20px;
 }
 
 .container {
@@ -48,3 +53,8 @@ html, body {
 	color: white;
 	padding: 10px;
 }
+
+h6 {
+	margin-top: 15px;
+}
+
