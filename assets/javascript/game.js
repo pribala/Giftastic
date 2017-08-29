@@ -52,7 +52,7 @@ $("body").on("click", ".topics", function(e) {
 		$("#gifs-appear-here").empty();
     	var person = $(this).attr("data-topics");
     	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        person + "&api_key=dc6zaTOxFJmzC&limit=10";
+        person + "&api_key=2452eab7996d40a59ad5d50f7a44392a&limit=10";
    
        	$.ajax({
            url: queryURL,
