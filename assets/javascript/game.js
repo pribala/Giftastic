@@ -1,8 +1,14 @@
 // Array of categories 
 var topics = ["sylvester stallone", "taylor swift", "elvis presley", "beatles"];
+var rating="";
 
 $("document").ready(function(){
 	renderButtons();
+});
+
+// Function sets the value of rating variable to the selected radio button
+$(".custom-control-input").on('click', function() {
+  rating = ($("[name=radio]:checked").val()).toUpperCase();
 });
 
 // Function creates buttons for each category in the array
@@ -39,9 +45,9 @@ $("#add-topic").on("click", function(event) {
     // Add a new topic when button is clicked
     var topic =$("#topics-input").val();
     if(topic) {
-	    $("#topics-input").val(""); 
-        topics.push(topic);
-        renderButtons();
+      $("#topics-input").val(""); 
+      topics.push(topic);
+      renderButtons();
     }
 });
 
@@ -51,9 +57,10 @@ $("body").on("click", ".topics", function(e) {
 	if(e.target.id === "person"){
 		$("#gifs-appear-here").empty();
     	var person = $(this).attr("data-topics");
+      
     	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        person + "&api_key=2452eab7996d40a59ad5d50f7a44392a&limit=10";
-   
+        person + "&api_key=2452eab7996d40a59ad5d50f7a44392a&limit=10&rating="+rating;
+    console.log(queryURL);
        	$.ajax({
            url: queryURL,
            method: "GET"
@@ -93,3 +100,5 @@ $("body").on("click", "#gif", function() {
           $(this).attr("data-state", "still");
     }
 });
+
+
