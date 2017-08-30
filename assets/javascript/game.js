@@ -1,5 +1,5 @@
 // Array of categories 
-var topics = ["sylvester stallone", "taylor swift", "elvis presley", "beatles"];
+var topics = ["sponge bob", "baymax", "lego batman", "scooby doo"];
 var rating="";
 
 $("document").ready(function(){
@@ -14,11 +14,11 @@ $(".custom-control-input").on('click', function() {
 // Function creates buttons for each category in the array
 function renderButtons() {
     $(".nav").empty();
-    $(".nav").append('<li class="heading"><h5>Famous People</h5></li>');
+    $(".nav").append('<li class="heading"><h5>Popular Characters</h5></li>');
     // Create the buttons for the categories
     topics.forEach(function(str) {
     	var buttonText = capitalizeStr(str);
-       	var newItem = $("<li>");
+      var newItem = $("<li>");
      	var newBtn = $("<button>");
 	    newBtn.addClass("btn btn-block topics");
 	    newBtn.attr("id", "person");
@@ -60,7 +60,7 @@ $("body").on("click", ".topics", function(e) {
       
     	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         person + "&api_key=2452eab7996d40a59ad5d50f7a44392a&limit=10&rating="+rating;
-    console.log(queryURL);
+    
        	$.ajax({
            url: queryURL,
            method: "GET"
