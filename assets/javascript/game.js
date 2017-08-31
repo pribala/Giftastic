@@ -70,7 +70,7 @@ $("body").on("click", ".topics", function(e) {
            var gifDiv = $("<div class='row'>");
 	       for (var i = 0; i < results.length; i++) {
       	   		var gifCol = $("<div>");
-      	   		gifCol.addClass("col-4 col-sm gifBar");
+      	   		gifCol.addClass("col-lg-4 col-sm gifBar");
 		    	var rating = results[i].rating;
             	var p = $("<p>").text("Rating: " + rating.toUpperCase());
             	var personImage = $("<img>");
