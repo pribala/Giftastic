@@ -54,7 +54,9 @@ $("#add-topic").on("click", function(event) {
 // Builds the query url for giphy api for the ajax call, queries giphy's random 
 // api endpoint and writes the resulting data to the document
 $("body").on("click", ".topics", function(e) {
+  e.preventDefault();
 	if(e.target.id === "person"){
+
 		$("#gifs-appear-here").empty();
     	var person = $(this).attr("data-topics");
       

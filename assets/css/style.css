@@ -5,6 +5,7 @@ html, body {
 	font-weight: bold;
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
 }
 
 .container-fluid {
@@ -20,12 +21,17 @@ html, body {
 	font-size: 35px;
 	color: #652D92;
 	padding: 15px;
+	width: 100%;
 }
 
 .sidebar {
-	border: 1px solid #957BBE;
-	background-color: #99C76C;
 	padding-bottom: 15px;
+}
+
+.wrapper {
+	background-color: #99C76C;
+	border: 1px solid #957BBE;
+	padding: 5px;
 }
 
 .topics {
