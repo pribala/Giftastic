@@ -69,12 +69,14 @@ $("body").on("click", ".topics", function(e) {
         }).done(function(response) {
            var results = response.data;
            console.log(results);
-           var gifDiv = $("<div class='row'>");
-	       for (var i = 0; i < results.length; i++) {
+            $(".custom-control-input").prop("checked", false);
+            rating = "";
+            var gifDiv = $("<div class='row'>");
+	          for (var i = 0; i < results.length; i++) {
       	   		var gifCol = $("<div>");
       	   		gifCol.addClass("col-lg-4 col-sm gifBar");
-		    	var rating = results[i].rating;
-            	var p = $("<p>").text("Rating: " + rating.toUpperCase());
+		    	    var gifRating = results[i].rating;
+            	var p = $("<p>").text("Rating: " + gifRating.toUpperCase());
             	var personImage = $("<img>");
             	personImage.attr("src", results[i].images.fixed_width_still.url);
             	personImage.attr("data-state", "still");
@@ -85,7 +87,7 @@ $("body").on("click", ".topics", function(e) {
             	gifCol.prepend(personImage);
             	gifDiv.append(gifCol);
             	$("#gifs-appear-here").prepend(gifDiv);
-         	};
+          };
     	});
     }
 });
